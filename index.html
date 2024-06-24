@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg pt-3">
+            <div class="container-fluid">
+              <a class="navbar-brand ps-5 fw-bolder" href="#"> <i class="fa fa-cloud" aria-hidden="true"></i> Weather</a>
+              <ul class="navbar-nav ms-auto mb-2 pe-4 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link disabled" aria-disabled="true">By Hala</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <section class="mt-4">
+      <div class="input-group flex-nowrap m-auto mt-5 mb">
+        <input type="text" id="search-city" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="addon-wrapping">
+        <span class="input-group-text" id="addon-wrapping"><i class="fa fa-search" aria-hidden="true"></i></span>
+      </div>
+    </section>
+    <section id="current-city" class="m-auto text-center bg-body-tertiary bg-opacity-75 mt-4 p-lg-5 p-2 mb-5">
+    </section>
+    <section id="days-after" class="d-flex justify-content-center align-items-center rounded-5 pt-5 pb-5 mt-4 m-auto position-absolute">
+      <h3 id="more" class="d-block">For more details about 2 days after</h3>
+      <button id="close-open" class="position-absolute border border-3 rounded-circle"><i id="icon" class="fa-solid fa-chevron-up"></i></button>
+      <section class="bg-dark mt-5 pt-4 pb-4 rounded-5 d-none" id="details">
+        <div id="carouselExampleDark" class="carousel carousel-dark text-white slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <div id="tommorow" class="d-flex justify-content-center align-items-center flex-column">
+              </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <div id="day-after" class="d-flex justify-content-center align-items-center flex-column"></div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
