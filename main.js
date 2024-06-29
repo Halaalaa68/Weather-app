@@ -41,7 +41,7 @@ async function getData(){
         <span><i class="fa-regular fa-compass"></i> <span id="direc">${(data.current.wind_dir=="N")?'North': (data.current.wind_dir=="E")? 'East':(data.current.wind_dir=="W")? 'West' : (data.current.wind_dir=="S")?'South' : (data.current.wind_dir=="NE")? 'North East' : (data.current.wind_dir=="NW")? 'North West' :(data.current.wind_dir=="SE")? 'South East' :'South West'}</span></span>
       </div>`
     tommorow.innerHTML=`<span class="d-flex justify-content-between w-50 align-items-center">
-                  <p class="darkblue">${days[date.getDay()+1]}</p>
+                  <p class="darkblue">${days[date.getDay()+1]? days[date.getDay()+1] : days[0]}</p>
                   <p class="darkblue">${data.forecast.forecastday[1].date}</p>
                 </span>
                 <h2>${data.location.name}</h2>
@@ -57,7 +57,7 @@ async function getData(){
                 </div>
               </div>`
     dayAfter.innerHTML=`<span class="d-flex justify-content-between w-50 align-items-center">
-                  <p class="darkblue">${days[date.getDay()+2]}</p>
+                  <p class="darkblue">${date.getDay()<=4? days[date.getDay()+2] : date.getDay()==5? days[0] : days[1]}</p>
                   <p class="darkblue">${data.forecast.forecastday[2].date}</p>
                 </span>
                 <h2>${data.location.name}</h2>
