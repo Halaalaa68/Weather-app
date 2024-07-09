@@ -8,20 +8,20 @@ let dayAfter= document.querySelector("#day-after");
 let currentCity= document.getElementById("current-city");
 let searchCity= document.getElementById("search-city");
 let days=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
-let date= new Date();
 let city=[]
 // getData()
 searchCity.addEventListener('keyup', async function(){
     let mySearch= await fetch(`https://api.weatherapi.com/v1/search.json?&days=3&key=c6f75ac9dca54c5984a115815242106&q=${searchCity.value}&aqi=no`)
     let myCity= await mySearch.json()
     city=myCity
-    console.log(city)
+    // console.log(city)
     getData()
 })
 async function getData(){
     let req= await fetch(`https://api.weatherapi.com/v1/forecast.json?&days=3&key=c6f75ac9dca54c5984a115815242106&q=${city.length>0? city[0].name:'Cairo'}%20${city.length>0? city[0].country: ''}&aqi=no`)
     let data= await req.json()
-    console.log(data)
+    // console.log(data)
+    let date= new Date(data.forecast.forecastday[0].date);
     currentCity.innerHTML=`<span class="d-flex justify-content-between align-items-center">
         <p class="darkblue">${days[date.getDay()]}</p>
         <p class="darkblue">${data.forecast.forecastday[0].date}</p>
